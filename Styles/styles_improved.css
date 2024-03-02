@@ -705,12 +705,18 @@ section .img:hover {
   .lightbox.isActive {
   width: 100%;
   }
+  .lightbox .grande {
+    width: 100%;
+    height: auto;
+    background-color: white;
+  }
   
 }
 .gallery-title{
   margin-top: 30px;
   font-size: 1em;
 }
+
 .contact-title{
   font-size: .70em;
 }
