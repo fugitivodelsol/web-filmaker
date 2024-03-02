@@ -443,6 +443,9 @@ section .img:hover {
 .grid .img:active {
   transform: scale(1.1);
 }
+.mail{
+  opacity: 0;
+}
 .vimeo{
   background-color: white;
   width: 40px;
