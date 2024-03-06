@@ -4,6 +4,7 @@
   border: 0;
   vertical-align: baseline;
   box-sizing: border-box;
+  
 }
 body {
   background-color: black;
@@ -23,6 +24,8 @@ body {
   -webkit-font-smoothing: antialiased;
   /* opcional */
   -moz-osx-font-smoothing: grayscale;
+  
+  
 }
 hr{
   width: 100%;
@@ -94,9 +97,6 @@ li {
     50% {transform: rotateY(360deg) rotateX(360deg);}
     100% {transform: rotateY(0deg) rotateX(0deg);}
   }
-
- 
-
 /********HEADER*********/
 .header {
   width: 100%;
@@ -234,14 +234,11 @@ header ul a:hover {
   margin-top: 0;
   display: flex; /* Ajustar los elementos hijos como flexibles */
   justify-content: space-between; /* Espaciar los elementos hijos uniformemente */
-  height: 100vh; /* Ajustar la altura al 100% de la vista del navegador */
 }
-
 section p {
   background-color: black;
   color: white;
   font-family: "Gruppo", sans-serif;
-  
   padding-right: 10%;
   text-align: center;
   font-family: "Space Grotesk", sans-serif;
@@ -249,7 +246,6 @@ section p {
   width: 50%; /* Dividir la anchura en dos partes iguales */
   margin: 0; /* Remover márgenes adicionales */
   margin-bottom: 60px;
-  
 }
 .about-video {
   width: 100%;
@@ -281,7 +277,6 @@ section p {
   height: 100px;
   font-weight: 100;
 }
-
 .about-gallery{
   display: flex;
   justify-content: center;
@@ -313,7 +308,6 @@ section .row {
   width: 25%;
   padding: 5px;
 }
-
 /* Clearfix (clear floats) */
 .row::after {
   content: "";
@@ -355,6 +349,10 @@ section .img:hover {
 .galeria {
   padding: 60px;
   display: none;
+}
+.lightbox .close{
+  width: 2rem;
+  height: 2rem;
 }
 /***********FOOTER***************/
 .about-gallery{
@@ -417,6 +415,15 @@ section .img:hover {
   height: 100%;
   margin: 0 10px;
 }
+.youtube{
+ background-color: black;
+  width: 100%;
+  height:auto ;
+}
+.youtube img{
+  width: 100%;
+  background-color: white;
+}
 .footer .icon svg {
   width: 1.5em; /* Puedes ajustar este valor según tus necesidades */
   height: 1.5em
@@ -444,15 +451,10 @@ section .img:hover {
   transform: scale(1.1);
 }
 .mail{
-  opacity: 0;
+  opacity: 1;
 }
 .vimeo{
-  background-color: white;
-  width: 40px;
-  height: auto;
-  padding: 0;
-  margin: 0;
-  
+  fill: white;  
 }
 .lightbox {
   width: 100%;
@@ -494,6 +496,45 @@ section .img:hover {
   height: 70vh;
   background-color: white;
 }
+ /*FORMULARIO*/
+ #divForm{
+  background-color: black;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+  margin: 0px;
+  padding: 45px;  
+  color: white; 
+  transition: height 0.5s ease; 
+  font-family: "Roboto Mono", monospace; 
+ }
+ .divForm label {
+    display: block;
+    margin: 4px;
+    border-color: white; 
+ }
+ .divForm input{
+    border: none; /* Elimina todos los bordes */
+    border-bottom: 1px solid white; /* Establece solo el borde inferior con color blanco */
+    background-color:black;
+    outline: none; /* Elimina el contorno predeterminado */
+    color: white; /* Cambia el color del texto a blanco */
+    padding: 5px; /* Añade relleno alrededor del texto*/
+ }
+ button{
+   display: block;
+   margin-top: 10px;
+   width: 20%;
+   height: 20px;
+   background-color: yellow(89, 105, 120);
+   border-radius: 2px;
+   color: black;
+   font-family: "Roboto Mono", monospace;
+   font-weight: 600;
+ }
+ #btn-mail{
+   opacity: 0;
+ }
 /*///////////////////////////////////////////////////////////////////////////////////*/
                             /* Estilo para MOVIL */
 /*///////////////////////////////////////////////////////////////////////////////////*/
@@ -542,7 +583,244 @@ section .img:hover {
   }
   header {
     height: 60px;
+    max-width: 576;
     font-size: 30%;
+    width: 100%;
+  }
+  header a {
+    font-size: 2em;
+    color: white;
+    font-family: "Gruppo", sans-serif;
+  }
+  header ul {
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    align-items: center;
+    overflow-y: auto; /*Coloca una barra de scroll*/
+    opacity: 0;
+    pointer-events: none;
+  }
+  header li {
+    height: 60%;
+    width: 80%;
+    margin: 0;
+    padding: 0;
+  }
+  li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100%;
+    width: auto;
+    font-size: 1.2rem;
+  }
+  h1 {
+    max-height: 100%;
+    width: auto;
+  }
+  h1 a {
+    max-height: 100%;
+    width: auto;
+  }
+  .titulo-filmmaker{
+    padding-inline-start: 1%;
+    padding-inline-end: 0;
+    margin-right: 0;
+    font-size: 3.5em;
+    font-family: "Roboto Mono", monospace;
+    font-weight: 300; /* Ajusta el peso a 300 (ligero) */
+  }
+  .open-menu{/*Refiere al boton hamburguesa*/
+    margin: 2%;
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    width: 2.1rem;
+    height: 2.3em;
+    border: 0;
+    background: transparent;
+    gap: .65rem;
+    z-index: 2;
+  }
+  .ulmenu{
+    z-index: 19;
+  }
+  .li-inicio{
+    width: 100%;
+    z-index: 20;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+  .a-inicio-transparente{
+    height: 60px;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+  }
+  .a-inicio{
+    z-index: 21;
+    background-color: black;
+    width: 100%;
+    height: 180px;
+  }
+  
+  .li-gallery{
+    background-color: black;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .a-gallery{
+    margin: 0;
+    padding: 0;
+  }
+  .li-about{
+    background-color: black;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .a-about{
+    margin: 0;
+    padding: 0;
+  }
+  .li-contact{
+    background-color: black;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .a-contact{
+    margin: 0;
+    padding: 0;
+  }
+  .open-menu div{
+    background-color: white;
+    height: 2px;
+    width: 100%;
+    border-radius: 5px;
+    transition: all .5s;
+    transform-origin: left;
+    z-index: 20;
+  }
+  /*BOTON HAMBURGUESA*/
+  .open-menu:hover div:first-child{
+    transform: rotate(45deg);
+  }
+  .open-menu:hover div:nth-child(2){
+    opacity: 0;
+  }
+  .open-menu:hover div:nth-child(3){
+    transform: rotate(-45deg);
+  }
+  .menu_opened {
+    opacity: 1;
+    pointer-events: all;
+    background-color: transparent;
+    z-index: 18;
+  }
+  li a {
+    z-index: 1001;
+  }
+  .about-title{
+    font-size: 1em;
+  }
+.about{
+  height: 60%;
+  }
+.section-about{
+    height: 300px;
+    padding: 0%;
+    margin-top: 0%;
+    background-color: wheat;
+  }
+ #about{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60%;
+    text-align: center;
+    padding-top: 0px;
+  }
+  .lightbox.isActive {
+  width: 100%;
+  }
+  .lightbox .grande {
+    width: 100%;
+    height: auto;
+    background-color: white;
+  }
+  .divFomr{
+    width: 100%;
+  }
+}
+.gallery-title{
+  margin-top: 30px;
+  font-size: 1em;
+}
+
+.contact-title{
+  font-size: .70em;
+}
+
+/*//////////////////////////////////////////////////////////////////////////////////////*/
+                                /*///////////TABLET//////////*/
+/*/////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (min-width: 577px) and (max-width: 768px) {
+
+  .loading-screen {
+    max-width: 768px;
+    width: 100%;
+    font-size: 30px;
+  }
+ .cubo >span{
+    position: absolute;
+      width: 2em;
+      height: 2em;
+      border: 1px solid white;
+      box-shadow: inset 0px 0px 15px 5px rgba(67, 195, 255, .2),0px
+      0px 40px 1px rgba(67, 195, 255, .15);
+      border-radius: 4px; 
+  }
+  .cubo > span:nth-child(1){transform: rotateY(90deg)translateZ(1em);}
+  .cubo > span:nth-child(2){transform: rotateY(90deg)translateZ(-1em);}
+  .cubo > span:nth-child(3){transform: rotateY(90deg)translateZ(-1em);}
+  .cubo > span:nth-child(4){transform: rotateY(90deg)translateZ(1em);}
+  .cubo > span:nth-child(5){transform: translateZ(1em);}
+  .cubo > span:nth-child(6){transform: translateZ(-1em);}
+  @keyframes rotar {
+      0% {transform: rotateY(0deg) rotateX(0deg);}
+      50% {transform: rotateY(360deg) rotateX(360deg);}
+      100% {transform: rotateY(0deg) rotateX(0deg);}
+    }
+  .column {
+    flex: 50%; /* Cambia a dos columnas en vez de cuatro */
+  }
+  .about p{
+    width: 100%;
+    padding: 10%;
+  }
+   /* Esto ocultará el video*/
+  .about-video{
+    display: none;
+  }
+  /* Esto ocultará las columnas seleccionadas */
+  .galeria .column:nth-child(3),
+  .galeria .column:nth-child(4) {
+    display: none;
+  }
+  header {
+    height: 60px;
+    font-size: 30%;
+    padding:125px;
   }
   header a {
     font-size: 2em;
@@ -713,152 +991,15 @@ section .img:hover {
     height: auto;
     background-color: white;
   }
-  
-}
-.gallery-title{
-  margin-top: 30px;
-  font-size: 1em;
-}
-
-.contact-title{
-  font-size: .70em;
+  .lightbox .close{
+    width: 2rem;
+    height: 2rem;
+  }
+ 
 }
 
-/*///////////////////////////////////////////////////////////////////////////////////*/
-
-@media screen and (min-width: 577px) and (max-width: 768px) {
-
-  .loading-screen {
-    max-width: 768px;
-    font-size: 30px;
-  }
-  .about{
-    padding: 5%;
-  }
-  .about-video{
-    display: none;
-  }
-  .about p{
-    width: 100%;
-    padding: 10%;
-  }
-  .column {
-    flex: 50%; /* Cambia a dos columnas en vez de cuatro */
-  }
-  /* Esto ocultará las columnas seleccionadas */
-  .galeria .column:nth-child(3),
-  .galeria .column:nth-child(4) {
-    display: none;
-  }
-  header {
-    height: 100px;
-    font-size: 30%;
-  }
-  header a {
-    font-size: 2em;
-    color: white;
-    font-family: "Gruppo", sans-serif;
-  }
-  header ul {
-    justify-content: center;
-    flex-direction: column;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    align-items: center;
-    overflow-y: auto; /*Coloca una barra de scroll*/
-    opacity: 0;
-  }
-  header li {
-    height: 30%;
-    width: 80%;
-    margin-top: 1rem;
-  }
-  .titulo-filmmaker{
-    padding-inline-start: 5%;
-    font-size: 3.5em;
-    font-family: "Roboto Mono", monospace;
-    font-weight: 300; /* Ajusta el peso a 300 (ligero) */
-  }
-  li a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100%;
-    width: auto;
-    font-size: 1.2rem;
-  }
-  h1 {
-    max-height: 100%;
-    width: auto;
-  }
-  h1 a {
-    max-height: 100%;
-    width: auto;
-  }
-  .open-menu{/*Refiere al boton hamburguesa*/
-    margin: 2%;
-    margin-top: 3%;
-    display: flex;
-    flex-direction: column;
-    width: 2.1rem;
-    height: 2.3em;
-    border: 0;
-    background: transparent;
-    gap: .65rem;
-    z-index: 2;
-  }
-  .open-menu div{
-    background-color: white;
-    height: 2px;
-    width: 100%;
-    border-radius: 5px;
-    transition: all .5s;
-    transform-origin: left;
-    z-index: 20;
-  }
-  
-  .open-menu:hover div:first-child{
-    transform: rotate(45deg);
-  }
-  .open-menu:hover div:nth-child(2){
-    opacity: 0;
-  }
-  .open-menu:hover div:nth-child(3){
-    transform: rotate(-45deg);
-  }
-  .menu_opened {
-    opacity: 1;
-    pointer-events: all;
-  }
-  li a {
-    z-index: 1001;
-  }
-  .li-inicio{
-    width: 100%;
-    z-index: 20;
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-  }
-  .a-inicio-transparente{
-    height: 60px;
-    background-color: transparent;
-    margin: 0;
-    padding: 0;
-  }
-  .a-inicio{
-    z-index: 21;
-    background-color: black;
-    width: 100%;
-    height: 180px;
-  }
-}
-
+/*//////////////////////////////////////////////////////////////////////////////////////////////////////////*/
+                            /*ESTILOS PARA PC*/
 /*//////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @media screen and (min-width: 769px) and (max-width: 992px) {
   .loading-screen {
@@ -964,8 +1105,16 @@ section .img:hover {
    padding-top: 0;
    background-color: black;
   }
+  .iconsContainer{
+    max-width: 20%;
+  }
 }
-/*///////////////////////////////////////////////////////////////////////////////////*/
 
 /*///////////////////////////////////////////////////////////////////////////////////*/
 
+/*///////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (min-width: 993px) {
+  .iconsContainer{
+    max-width: 20%;
+  }
+}

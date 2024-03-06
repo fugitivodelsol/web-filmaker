@@ -1,6 +1,6 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   var video = document.getElementById("myVideo");
   var gallery = document.getElementById("gallery");
   var loadingScreen = document.getElementById("loadingScreen");
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   video.load();
-});
+});*/
 
 const imglist = document.querySelectorAll(`.img`);
 const lightbox = document.querySelector(`.lightbox`);
@@ -66,8 +66,6 @@ function toggleMenu() {
 }
 
 openMenuBtn.addEventListener("click", toggleMenu);
-//closeMenuBtn.addEventListener("click", toggleMenu);
-//menuLinks.addEventListener("click", toggleMenu);
 
 menuLinks.forEach(link => {
   link.addEventListener("click", function() {
@@ -92,4 +90,5 @@ menuLinks.forEach(link => {
     header.style.visibility = 'visible'; // Muestra el header
   });
   
+//FOMR//
 
