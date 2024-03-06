@@ -9,6 +9,6 @@ function handleSubmit(event){
     
    const form = new FormData(this)
   
-   $buttonMail.setAttribute('href',`mailto:lrtaborda@gmail.com?subject= Nombre: ${form.get('name')}. Correo: ${form.get('email')}&body=${form.get('message')}`)
+   $buttonMail.setAttribute('href',`mailto:juanepeirano@gmail.com?subject= Nombre: ${form.get('name')}. Correo: ${form.get('email')}&body=${form.get('message')}`)
    $buttonMail.click()
 }
